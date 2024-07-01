@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://codavfigu12it"]
+
+[ext_resource type="Texture2D" uid="uid://h7rbklmolcdl" path="res://assets/sprites/Platform/platform.png" id="1_twm0y"]
+[ext_resource type="PackedScene" uid="uid://cotqo8vkvhfj1" path="res://Scenes/enemy.tscn" id="2_ewr1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12r08"]
+size = Vector2(380, 40)
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_twm0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_12r08")
+
+[node name="Enemy" parent="." instance=ExtResource("2_ewr1y")]
+position = Vector2(164, -92)
+scale = Vector2(0.4, 0.4)
